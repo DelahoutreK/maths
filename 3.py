@@ -20,3 +20,8 @@ for char in equation:
             b += char
         elif c == '':
             c += char
+    elif char == '-' and (a == '' or b =='' or c == ''):
+        if b=='':
+           b += char
+        elif c == '':
+            c += char
