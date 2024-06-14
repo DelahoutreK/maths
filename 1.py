@@ -18,7 +18,7 @@ def decrypt(crypt, shift): # def decryption
             decryptmsg += characters[ltr]
     return decryptmsg
 
-question = input("Encrypt or decrypt?\n").lower() # selection encryption ou decryption
+question = input("Encrypt(y) or decrypt(n)?\n").lower() # selection encryption ou decryption
 if question == "encrypt" or question == 'y':
     message = input("Message to encrypt:\n").upper() # user input pour le message a encrypter
     shift = int(input("inserez shift:\n")) # shift pour décaler les lettres du message

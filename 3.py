@@ -1,5 +1,7 @@
+# apres avoir recherché le sujet plus en profondeur, utiliser une liste pour stocker les valeurs de l'equation aurait été probablement plus simple
+
 #import cmath
-equation = input("Entrer equation du second degre (ax^2 + bx + c), les espaces sont importants:\n").lower()
+equation = input("Entrer equation du second degre (ax^2 + bx + c), la notation est importante!:\n").lower()
 
 a = 0.0
 b = 0.0
