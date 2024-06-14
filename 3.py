@@ -27,7 +27,7 @@ for terme in termes:
 delta = (b*b)-(4*a*c)
 print(f"delta vaut {delta}")
 
-if delta >= 0
+if delta >= 0:
     sol1 = (-b + (delta ** 0.5)) / (2*a)
     sol2 = (-b - (delta ** 0.5)) / (2*a)
     eq1 = a * (sol1 **2) + b * sol1 + c
