@@ -17,20 +17,19 @@ for terme in termes:
     elif terme.isnumeric() or (terme[0] == '-' and terme[1:].isnumeric()): # selectione C et vérifie si positif ou negatif
         c = float(terme)
         
-delta = (b*b)-(4*a*c)
+#delta = (b*b)-(4*a*c)
+delta = 0
 print(f"delta vaut {delta}")
 
 if delta > 0: # gere un delta positif
-    sol1 = (-b + (delta ** 0.5)) / (2*a)
-    sol2 = (-b - (delta ** 0.5)) / (2*a)
-    eq1 = a * (sol1 **2) + (b * sol1) + c
-    eq2 = a * (sol2 ** 2) + (b * sol2) + c
-    print(f"les solutions possibles sont: {eq1} et {eq2}")
+    sol1 = round((-b+(delta**0.5))/(2*a),2)
+    sol2 = round((-b-(delta**0.5))/(2*a),2)
+    print(f"{sol1} et {sol2}")
+
 
 elif delta == 0: # gere un delta nul
-    sol1 = -b/(2*a)
-    eq1 = a * (sol1**2) + b * sol1 + c
-    print(f"La solution est {eq1}")
+    sol1 = round(-b/(2*a),2)
+    print(f"La solution est {sol1}")
 
 elif delta < 0: # delta negatif
     print("delta est un complexe.") 
