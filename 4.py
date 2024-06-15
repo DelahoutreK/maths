@@ -40,6 +40,16 @@ class Polynome: # classe python pour stocker mes polynomes
 
 #########################################################
 
+# multiplication de polynomes
+    def multP(self,multpol):
+        resultat = [0] * 8
+        for i in range(4):
+            for j in range(4):
+                resultat[i] += self.coefficients[i] * multpol.coefficients[j]
+        return Polynome(resultat)
+    
+#########################################################
+
 def main(): # definition de la fct calculatrice
     print("Premier Polynome:\n")
     p1=Polynome()
@@ -62,6 +72,15 @@ def main(): # definition de la fct calculatrice
         reel = float(input("valeur a multiplier:\n"))
         rprod = p1.multR(reel)
         print(rprod)
+        
+    # multiplication par polynome
+    elif choix == "M" or choix == 'm':
+        print("Second Polynome:\n")
+        p2=Polynome()
+        p2.polcoef()
+        print(p2)
+        mult = p1.multP(p2)
+        print(mult)
         
 if __name__ == "__main__": # call de main() si elle existe
     main()
