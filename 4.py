@@ -28,7 +28,7 @@ class Polynome: # classe python pour stocker mes polynomes
 
 # addition pol
     def add(self,oth):
-        resultat = [self.coefficients[i] + oth. coefficientrs[i] for i in range(4)]
+        resultat = [self.coefficients[i] + oth.coefficients[i] for i in range(4)]
         return Polynome(resultat)
 
 #########################################################
@@ -40,7 +40,7 @@ def main():
     print(p1)
     
     choix = input("Addition de polynomes?(A)\nMulitiplication par reel?(R)\nMultiplication par polynome?(M)\n")
-    if choix == "A" or "a":
+    if choix == "A" or choix == "a":
         print("Second Polynome:\n")
         p2=Polynome()
         p2.polcoef()
@@ -48,6 +48,7 @@ def main():
         sum = p1.add(p2)
         print(sum)
     
-    
+if __name__ == "__main__":
+    main()
 #pol = Polynome([2,0,1,3])
 #print(pol)
