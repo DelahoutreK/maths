@@ -19,8 +19,16 @@ def soluce(eq1, eq2):
     
     return a,b
 
-eq1 = Equation(3,2,10)
-eq2 = Equation(1,-1,1)
+x1 = float(input("coefficients equation 1, x:\n"))
+y1 = float(input("coefficients equation 1, y:\n"))
+z1 = float(input("coefficients equation 1, c:\n"))
+
+x2 = float(input("coefficients equation 2, x:\n"))
+y2 = float(input("coefficients equation 2, y:\n"))
+z2 = float(input("coefficients equation 2, c:\n"))
+
+eq1 = Equation(x1,y1,z1)
+eq2 = Equation(x2,y2,z2)
 
 try:
     a,b = soluce(eq1,eq2)
