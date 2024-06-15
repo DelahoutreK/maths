@@ -34,7 +34,7 @@ elif delta == 0: # gere un delta nul
     print(f"La solution est {sol1}")
 
 elif delta < 0: # delta negatif
-    print("delta est un complexe.") 
+    print("pas de solution dans les réels.") 
     #sol1 = (-b + cmath.sqrt(-delta))/(2*a)
     #sol2 = (-b - cmath.sqrt(-delta))/(2*a)
     #print(f"solutions: {sol1} et {sol2}")
