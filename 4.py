@@ -1,9 +1,9 @@
 # definition d'un polynome 
 class Polynome: # classe python pour stocker mes polynomes
-    def __init__(self, degree=4, coefficients=None):
-        self.degree = degree
+    def __init__(self, degree=4, coefficients=None): # besoin d'un degree pour la mult polynomyale
+        self.degree = degree # instancie degree
         if coefficients is None:
-            self.coefficients = [0] * (self.degree + 1)
+            self.coefficients = [0] * (self.degree + 1) # permet d'avoir jusqu'a 8 degree, merci ma multP
         else:
             self.coefficients = coefficients
     
@@ -29,15 +29,15 @@ class Polynome: # classe python pour stocker mes polynomes
 
 # addition pol
     def add(self,oth):
-        resultat = [self.coefficients[i] + oth.coefficients[i] for i in range(4)]
-        return Polynome(resultat)
+        resultat = [self.coefficients[i] + oth.coefficients[i] for i in range(5)]
+        return Polynome(degree= 5,coefficients = resultat)
 
 #########################################################
 
 # multiplication par reel
     def multR(self,scal):
         resultat = [coef*scal for coef in self.coefficients]
-        return Polynome(resultat)
+        return Polynome(self.degree, coefficients=resultat)
 
 #########################################################
 
