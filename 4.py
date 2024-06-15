@@ -33,6 +33,13 @@ class Polynome: # classe python pour stocker mes polynomes
 
 #########################################################
 
+# multiplication par reel
+    def multR(self,scal):
+        resultat = [coef*scal for coef in self.coefficients]
+        return Polynome(resultat)
+
+#########################################################
+
 def main(): # definition de la fct calculatrice
     print("Premier Polynome:\n")
     p1=Polynome()
@@ -49,6 +56,13 @@ def main(): # definition de la fct calculatrice
         sum = p1.add(p2)
         print(sum)
     
+    # multiplication par reel
+    elif choix == "R" or choix == 'r':
+        print("Inserez valeur a multiplier:\n")
+        reel = input("valeur a multiplier:\n")
+        rprod = p1.multR(reel)
+        print(rprod)
+        
 if __name__ == "__main__": # call de main() si elle existe
     main()
 #pol = Polynome([2,0,1,3])
