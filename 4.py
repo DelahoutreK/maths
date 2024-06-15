@@ -33,12 +33,13 @@ class Polynome: # classe python pour stocker mes polynomes
 
 #########################################################
 
-def main():
+def main(): # definition de la fct calculatrice
     print("Premier Polynome:\n")
     p1=Polynome()
     p1.polcoef()
     print(p1)
     
+    # addition de polynome (call de la methode)
     choix = input("Addition de polynomes?(A)\nMulitiplication par reel?(R)\nMultiplication par polynome?(M)\n")
     if choix == "A" or choix == "a":
         print("Second Polynome:\n")
@@ -48,7 +49,7 @@ def main():
         sum = p1.add(p2)
         print(sum)
     
-if __name__ == "__main__":
+if __name__ == "__main__": # call de main() si elle existe
     main()
 #pol = Polynome([2,0,1,3])
 #print(pol)
