@@ -59,7 +59,7 @@ def main(): # definition de la fct calculatrice
     # multiplication par reel
     elif choix == "R" or choix == 'r':
         print("Inserez valeur a multiplier:\n")
-        reel = input("valeur a multiplier:\n")
+        reel = float(input("valeur a multiplier:\n"))
         rprod = p1.multR(reel)
         print(rprod)
         
