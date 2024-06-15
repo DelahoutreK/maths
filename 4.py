@@ -1,15 +1,16 @@
 # definition d'un polynome 
 class Polynome: # classe python pour stocker mes polynomes
-    def __init__(self, coefficients=None):
+    def __init__(self, degree=4, coefficients=None):
+        self.degree = degree
         if coefficients is None:
-            self.coefficients = [0] * 4
+            self.coefficients = [0] * (self.degree + 1)
         else:
             self.coefficients = coefficients
     
     def __str__(self): # stringify
         termes = []
-        for degree in range (4,0,-1):
-            coef = self.coefficients[4- degree]
+        for degree in range (self.degree,-1,-1):
+            coef = self.coefficients[degree]
             if coef !=0:
                 termes.append(f'{coef}x^{degree}')
         return " + ".join(termes) if termes else "0"
@@ -20,7 +21,7 @@ class Polynome: # classe python pour stocker mes polynomes
 # input de polynome 
     def polcoef(self):
         print("Entrez valeurs de coefs:\n")
-        for degree in range(4,0,-1):
+        for degree in range(4,-1,-1):
             coef = float(input(f"coefs x^{degree}:"))
             self.coefficients[4-degree] = coef
             
@@ -41,12 +42,13 @@ class Polynome: # classe python pour stocker mes polynomes
 #########################################################
 
 # multiplication de polynomes
-    def multP(self,multpol):
-        resultat = [0] * 8
-        for i in range(4):
-            for j in range(4):
-                resultat[i] += self.coefficients[i] * multpol.coefficients[j]
-        return Polynome(resultat)
+    def multP(self, multpol):
+        deg = self.degree + multpol.degree
+        resultat = [0] * (deg + 1)
+        for i in range(self.degree + 1):
+            for j in range(multpol.degree + 1):
+                resultat[i+j] += self.coefficients[i] * multpol.coefficients[j]
+        return Polynome(degree=deg, coefficients=resultat)
     
 #########################################################
 
@@ -84,5 +86,3 @@ def main(): # definition de la fct calculatrice
         
 if __name__ == "__main__": # call de main() si elle existe
     main()
-#pol = Polynome([2,0,1,3])
-#print(pol)
