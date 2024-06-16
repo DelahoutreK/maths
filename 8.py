@@ -40,6 +40,11 @@ class Matrice:
             resultat = [[element * oth for element in ligne] for ligne in self.valeurs] # multiplie chaque element de self par le scalaire
             return Matrice(resultat)
         
+# transposition
+    def transpose(self):
+        resultat = [[self.valeurs[i][j] for i in range(self.lignes) for j in range(self.cols)]]
+        return Matrice(resultat)
+    
 # fonction pour instancier les matrices via input
 def creation():
     lignes = int(input("nb de lignes:"))
@@ -76,9 +81,9 @@ try:
     print ("A+B=\n")
     for row in C.valeurs:
         print(row)
-    
+print(A*B)    
 
 except ValueError as e:
     print(e)
 """    
-print(A*B)
+print(A.transpose())
