@@ -58,14 +58,6 @@ def creation():
         valeurs.append(ligne)
     return Matrice(valeurs)
 
-
-
-"""
-# dummy matrixes to test
-A = Matrice([[1,2],[3,4]])
-B = Matrice([[1,2],[3,4]]) 
-"""
-
 # output 
 def main():
 
