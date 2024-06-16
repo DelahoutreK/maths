@@ -58,32 +58,40 @@ def creation():
         valeurs.append(ligne)
     return Matrice(valeurs)
 
-# input de matrice par utilisateur
-"""
-print("Inserez matrice A:")
-A = creation()
-print("Matrice A:")
-print(A)
 
-print("Inserez matrice B:")
-B = creation()
-print("Matrice B:")
-print(B)
+
 """
 # dummy matrixes to test
 A = Matrice([[1,2],[3,4]])
 B = Matrice([[1,2],[3,4]]) 
+"""
 
 # output 
-"""
-try: 
-    C = A + B
-    print ("A+B=\n")
-    for row in C.valeurs:
-        print(row)
-print(A*B)    
+def main():
 
-except ValueError as e:
-    print(e)
-"""    
-print(A.transpose())
+# input de matrice par utilisateur
+    print("Inserez matrice A:")
+    A = creation()
+    print("Matrice A:")
+    print(A)
+
+    print("Inserez matrice B:")
+    B = creation()
+    print("Matrice B:")
+    print(B)
+    
+# operation a effectuer
+    choix = input('operation a effectuer:\n Multiplication(M), Addition(A), Transpose(T)').upper()
+    if choix == "M":
+        multiplication = (A*B)
+        print(multiplication)
+        
+    elif choix == "A":
+       addition = (A+B)
+       print(addition)
+       
+    elif choix == "T":
+        print(f'la transpose de A est:\n{A.transpose()}\n la transpose de B est:\n{B.transpose()}')
+        
+if __name__ == "__main__":
+    main()
