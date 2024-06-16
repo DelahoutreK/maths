@@ -35,17 +35,17 @@ sort2 = sorted(set2)
 sort3 = sorted(set3)
 
 venn_labels = tuple(f'multiples de {nb}' for nb in numbers)
-venndeez = venn3(sets, venn_labels)
+venndiag = venn3(sets, venn_labels)
 
 venn3_circles(sets, linestyle='solid')
 
-venndeez.get_label_by_id('100').set_text(','.join(map(str, sorted(set1 - set2 - set3))))
-venndeez.get_label_by_id('010').set_text(','.join(map(str, sorted(set2 - set1 - set3))))
-venndeez.get_label_by_id('001').set_text(','.join(map(str, sorted(set3 - set1 - set2))))
-venndeez.get_label_by_id('110').set_text(','.join(map(str, sorted(set1 & set2 - set3))))
-venndeez.get_label_by_id('101').set_text(','.join(map(str, sorted(set1 & set3 - set2))))
-venndeez.get_label_by_id('011').set_text(','.join(map(str, sorted(set2 & set3 - set1))))
-venndeez.get_label_by_id('111').set_text(','.join(map(str, sorted(set1 & set2 & set3))))
+venndiag.get_label_by_id('100').set_text(','.join(map(str, sorted(set1 - set2 - set3))))
+venndiag.get_label_by_id('010').set_text(','.join(map(str, sorted(set2 - set1 - set3))))
+venndiag.get_label_by_id('001').set_text(','.join(map(str, sorted(set3 - set1 - set2))))
+venndiag.get_label_by_id('110').set_text(','.join(map(str, sorted(set1 & set2 - set3))))
+venndiag.get_label_by_id('101').set_text(','.join(map(str, sorted(set1 & set3 - set2))))
+venndiag.get_label_by_id('011').set_text(','.join(map(str, sorted(set2 & set3 - set1))))
+venndiag.get_label_by_id('111').set_text(','.join(map(str, sorted(set1 & set2 & set3))))
 
 
 plt.title("ensembles")
