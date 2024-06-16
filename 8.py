@@ -20,6 +20,26 @@ class Matrice:
             resultat.append(ligne)
         return Matrice(resultat)
 
+# multiplication de matrices OU scalaires
+    def __mul__(self,oth):
+        if isinstance(oth,Matrice): # is oth a Matrice?
+            if self.cols != oth.lignes: # is Alines == B cols?
+                raise ValueError("Matrices non multipliables, entrez les matrices telles que A(n,m) B(m,p)")
+            resultat = [] # valeurs de C stockées ici
+            for i in range(len(self.valeurs)):
+                ligne = [] # valeurs de lignes 
+                for j in range(len(oth.valeurs[0])):
+                    sum = 0 # contiendra les elements a mettre dans ligne
+                    for k in range(len(oth.valeurs)):
+                        sum += self.valeurs[i][k] * oth.valeurs[k][j] # somme accumulée, self i*oth k et self k * oth j
+                    ligne.append(sum)
+                resultat.append(ligne)
+            return Matrice(resultat)
+        
+        else: # oth != Matrice, scalaire
+            resultat = [[element * oth for element in ligne] for ligne in self.valeurs] # multiplie chaque element de self par le scalaire
+            return Matrice(resultat)
+        
 # fonction pour instancier les matrices via input
 def creation():
     lignes = int(input("nb de lignes:"))
@@ -50,11 +70,15 @@ A = Matrice([[1,2],[3,4]])
 B = Matrice([[1,2],[3,4]]) 
 
 # output 
+"""
 try: 
     C = A + B
     print ("A+B=\n")
     for row in C.valeurs:
         print(row)
+    
 
 except ValueError as e:
     print(e)
+"""    
+print(A*B)
