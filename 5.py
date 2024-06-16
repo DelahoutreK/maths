@@ -31,13 +31,14 @@ sort3 = sorted(set3)
 
 venndeez = venn3([set1,set2,set3],('mult 2', 'mult 3', 'mult 4'))
 
-venndeez.get_label_by_id('100').set_text(sort1-sort2-sort3)
-venndeez.get_label_by_id('010').set_text(sort2-sort1-sort3)
-venndeez.get_label_by_id('001').set_text(sort3-sort1-sort2)
-venndeez.get_label_by_id('110').set_text(sort1&sort2-sort3)
-venndeez.get_label_by_id('101').set_text(sort1&sort3-sort2)
-venndeez.get_label_by_id('011').set_text(sort2&sort3-sort1)
-venndeez.get_label_by_id('111').set_text(sort1&sort2&sort3)
+venndeez.get_label_by_id('100').set_text(','.join(map(str, sorted(set1 - set2 - set3))))
+venndeez.get_label_by_id('010').set_text(','.join(map(str, sorted(set2 - set1 - set3))))
+venndeez.get_label_by_id('001').set_text(','.join(map(str, sorted(set3 - set1 - set2))))
+venndeez.get_label_by_id('110').set_text(','.join(map(str, sorted(set1 & set2 - set3))))
+venndeez.get_label_by_id('101').set_text(','.join(map(str, sorted(set1 & set3 - set2))))
+venndeez.get_label_by_id('011').set_text(','.join(map(str, sorted(set2 & set3 - set1))))
+venndeez.get_label_by_id('111').set_text(','.join(map(str, sorted(set1 & set2 & set3))))
+
 
 plt.title("ensembles")
 
