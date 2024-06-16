@@ -42,7 +42,7 @@ class Matrice:
         
 # transposition
     def transpose(self):
-        resultat = [[self.valeurs[i][j] for i in range(self.lignes) for j in range(self.cols)]]
+        resultat = [[self.valeurs[j][i] for j in range(self.lignes)] for i in range(self.cols)]
         return Matrice(resultat)
     
 # fonction pour instancier les matrices via input
